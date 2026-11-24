@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro y Calificaciones</title>
+    <!-- Enlace al archivo CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Registro de Estudiante</h1>
+
+        <!-- SECCIÓN 1: Datos Personales y Creación de Clave -->
+        <form id="form-registro">
+            <div class="input-group">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" required placeholder="Ingrese su nombre">
+            </div>
+
+            <div class="input-group">
+                <label for="apellido">Apellido:</label>
+                <input type="text" id="apellido" required placeholder="Ingrese su apellido">
+            </div>
+
+            <div class="input-group">
+                <label for="edad">Edad:</label>
+                <input type="number" id="edad" required placeholder="Ingrese su edad">
+            </div>
+
+            <div class="input-group">
+                <label for="cedula">Cédula:</label>
+                <input type="text" id="cedula" required placeholder="Ingrese su cédula">
+            </div>
+
+            <div class="input-group">
+                <label for="clave">Crea tu clave:</label>
+                <input type="password" id="clave" required placeholder="Crea una contraseña">
+            </div>
+
+            <button type="submit">Continuar</button>
+        </form>
+
+        <!-- SECCIÓN 2: Confirmación de Clave (3 intentos máximo) -->
+        <div id="seccion-confirmacion" class="oculto">
+            <h2>Confirmar Clave</h2>
+            <p>Usuario generado: <strong id="usuario-generado"></strong></p>
+            
+            <div class="input-group">
+                <label for="clave-confirmacion">Confirma tu clave:</label>
+                <input type="password" id="clave-confirmacion" placeholder="Repite tu contraseña">
+            </div>
+            
+            <button type="button" id="btn-confirmar">Confirmar Clave</button>
+            <p id="mensaje-clave" class="mensaje"></p>
+        </div>
+
+        <!-- SECCIÓN 3: Ingreso de 5 Notas -->
+        <form id="form-notas" class="oculto">
+            <h2>Ingreso de Notas</h2>
+            <div class="notas-grid">
+                <div class="input-group">
+                    <label for="nota1">Nota 1:</label>
+                    <input type="number" id="nota1" step="0.1" min="0" max="5" required>
+                </div>
+                <div class="input-group">
+                    <label for="nota2">Nota 2:</label>
+                    <input type="number" id="nota2" step="0.1" min="0" max="5" required>
+                </div>
+                <div class="input-group">
+                    <label for="nota3">Nota 3:</label>
+                    <input type="number" id="nota3" step="0.1" min="0" max="5" required>
+                </div>
+                <div class="input-group">
+                    <label for="nota4">Nota 4:</label>
+                    <input type="number" id="nota4" step="0.1" min="0" max="5" required>
+                </div>
+                <div class="input-group">
+                    <label for="nota5">Nota 5:</label>
+                    <input type="number" id="nota5" step="0.1" min="0" max="5" required>
+                </div>
+            </div>
+
+            <button type="submit">Calcular Promedio</button>
+        </form>
+
+        <!-- SECCIÓN 4: Resultado Final -->
+        <div id="seccion-resultado" class="oculto">
+            <h2>Resultado Final</h2>
+            <p id="mensaje-final"></p>
+            <div class="contadores">
+                <span>Aprobados: <strong id="contador-aprobados">0</strong></span>
+                <span>Reprobados: <strong id="contador-reprobados">0</strong></span>
+            </div>
+            <button type="button" id="btn-reiniciar" class="btn-secundario">Nuevo Registro</button>
+        </div>
+    </div>
+
+    <!-- Enlace al archivo JavaScript (scrip.js) -->
+    <script src="scrip.js"></script>
+</body>
+</html>
